@@ -3,6 +3,7 @@
 This is my collection of [SmartThings](https://www.smartthings.com/) apps and device handlers that I use.
 
 * [Camera LED Controller SmartApp](smartapps/chadly/camera-led-controller.src)
+* [AsusWRT Wifi Presence SmartApp](smartapps/chadly/asuswrt-wifi-presence.src)
 
 ## Installation
 
@@ -26,4 +27,5 @@ You can also install it manually for those of you who really enjoy copying & pas
 
 1. Navigate to the app or device handler you want to install and copy the code.
 	* [Camera LED Controller SmartApp Code](https://raw.githubusercontent.com/chadly/smartthings-camera-led-controller/master/smartapps/chadly/camera-led-controller.src/camera-led-controller.groovy)
+	* [AsusWRT Wifi Presence SmartApp Code](https://raw.githubusercontent.com/chadly/smartthings/master/smartapps/chadly/asuswrt-wifi-presence.src/asuswrt-wifi-presence.groovy)
 2. Follow the instructions from the [ThingsThatAreSmart.wiki](http://thingsthataresmart.wiki/index.php?title=Using_Custom_Code#Using_a_Custom_SmartApp) on how to install a SmartApp.
