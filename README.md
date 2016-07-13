@@ -14,9 +14,9 @@ The best way to get updates is to enable GitHub integration and add this reposit
 2. Select `Settings`
 3. Select `Add new repository`
 4. Enter the following details:
-	Owner: `chadly`
-	Name: `smartthings`
-	Branch: `master`
+	* Owner: `chadly`
+	* Name: `smartthings`
+	* Branch: `master`
 
 Now whenever you need to update to the latest version, you can choose `↓ Update from Repo`, select the app or device handler, and get your updates.
 
