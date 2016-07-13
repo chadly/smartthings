@@ -25,6 +25,5 @@ Now whenever you need to update to the latest version, you can choose `↓ Updat
 You can also install it manually for those of you who really enjoy copying & pasting everything.
 
 1. Navigate to the app or device handler you want to install and copy the code.
+	* [Camera LED Controller SmartApp Code](https://raw.githubusercontent.com/chadly/smartthings-camera-led-controller/master/smartapps/chadly/camera-led-controller.src/camera-led-controller.groovy)
 2. Follow the instructions from the [ThingsThatAreSmart.wiki](http://thingsthataresmart.wiki/index.php?title=Using_Custom_Code#Using_a_Custom_SmartApp) on how to install a SmartApp.
-
-* [Camera LED Controller SmartApp Code](https://raw.githubusercontent.com/chadly/smartthings-camera-led-controller/master/smartapps/chadly/camera-led-controller.src/camera-led-controller.groovy)
