@@ -38,59 +38,71 @@ preferences {
 }
 
 def installed() {
-	log.debug "Installed with settings: ${settings}"
 	initialize()
 }
 
 def updated() {
-	log.debug "Updated with settings: ${settings}"
 	unsubscribe()
 	initialize()
 }
 
 def initialize() {
-	subscribe(light, "switch.on", lightOn)
-	subscribe(light, "switch.off", lightOff)
-	subscribe(dimmer, "switch.setLevel", dimmerAdjusted)
+	subscribe(light, "switch", lightChanged)
+	subscribe(dimmer, "switch", dimmerAdjusted)
+	subscribe(dimmer, "level", dimmerAdjusted)
 }
 
-def lightOn(evt) {
-	log.info "$evt.displayName was turned on, turning off camera LED"
-
-	led.setWhiteLevel(100)
-
-	def colorRGB = colorNameToRgb(colorName)
-	def colorHex = rgbToHex(colorRGB)
-	def colorHSL = rgbToHSL(colorRGB)
-
-	def colorData = [:]
-		colorData = [h: 0,
-		s: 0,
-		l: 100,
-		r: 255,
-		g: 255,
-		b: 255,
-		rh: hex(255),
-		gh: hex(255),
-		bh: hex(255),
-		hex: "#ffffff",
-		alpha: 1]
-
-	led.setAdjustedColor(colorData)
-}
-
-def lightOff(evt) {
-	log.debug "the light is off: $evt"
-	led.setLevel(0)
+def lightChanged(evt) {
+	adjustLED()
 }
 
 def dimmerAdjusted(evt) {
-	if ((evt.value == "on") || (evt.value == "off" ))
-		return
+	adjustLED()
+}
 
-	def level = evt.value.toFloat()
-	level = level.toInteger()
-	log.info "master switch adjusted to level: ${level}"
+def adjustLED() {
+	if (!adjustColorFromLight()) {
+		adjustWhitesFromDimmer()
+	}
+}
 
-	led.setWhiteLevel(level)
+def adjustColorFromLight() {
+	def switchState = light.latestValue("switch")
+
+	if (switchState == "on") {
+		def colorData = [:]
+			colorData = [h: 0,
+			s: 0,
+			l: 100,
+			r: 255,
+			g: 255,
+			b: 255,
+			rh: "ff",
+			gh: "ff",
+			bh: "ff",
+			hex: "#ffffff",
+			alpha: 1]
+
+		led.setAdjustedColor(colorData)
+
+		led.setLevel(100)
+		led.setWhiteLevel(100)
+
+		return true
+	} else {
+		led.setLevel(0)
+		return false
+	}
+}
+
+def adjustWhitesFromDimmer() {
+	// match the dimmer switch level for whites
+	def dimmerState = dimmer.latestValue("switch")
+
+	if (dimmerState == "on") {
+		def dimmerLevel = dimmer.latestValue("level")
+		led.setWhiteLevel(dimmerLevel.toInteger())
+	} else {
+		led.setWhiteLevel(0)
+	}
 }
