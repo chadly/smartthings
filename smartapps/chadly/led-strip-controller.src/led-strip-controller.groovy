@@ -12,6 +12,7 @@
  *  on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
  *  for the specific language governing permissions and limitations under the License.
  *
+ *	2016-11-23: Add option to force LED color
  *	2016-11-21: Initial Release
  */
 definition(
@@ -26,13 +27,19 @@ definition(
 
 
 preferences {
-	section("When this light is toggled") {
+	section("Overhead Light") {
+		paragraph "When this light is turned on, turn LED strip light on to full brigtness"
 		input "light", "capability.switch", required: true
 	}
-	section("When this dimmer is changed") {
+	section("Force LEDs to White?") {
+		paragraph "If this option is selected, when the overhead light is turned on, the LED lights will be forced to the color white and will be turned on along with the warm white LEDs. If it is not selected, the LED color will not be changed; only the warm white LEDs will be turned on."
+		input "forceColor", "bool", required: true
+	}
+	section("Island Dimmer") {
+		paragraph "When this dimmer is turned on or dimmed without the overhead light on, the LED strip lights' brightness will follow this dimmer"
 		input "dimmer", "capability.switchLevel", required: true
 	}
-	section("Turn on & set level of this LED strip") {
+	section("LED Strip") {
 		input "led", "capability.switch", required: true
 	}
 }
@@ -70,27 +77,32 @@ def adjustColorFromLight() {
 	def switchState = light.latestValue("switch")
 
 	if (switchState == "on") {
-		def colorData = [:]
-			colorData = [h: 0,
-			s: 0,
-			l: 100,
-			r: 255,
-			g: 255,
-			b: 255,
-			rh: "ff",
-			gh: "ff",
-			bh: "ff",
-			hex: "#ffffff",
-			alpha: 1]
+		if (forceColor) {
+			def colorData = [:]
+				colorData = [h: 0,
+				s: 0,
+				l: 100,
+				r: 255,
+				g: 255,
+				b: 255,
+				rh: "ff",
+				gh: "ff",
+				bh: "ff",
+				hex: "#ffffff",
+				alpha: 1]
 
-		led.setAdjustedColor(colorData)
+			led.setAdjustedColor(colorData)
+			led.setLevel(100)
+		}
 
-		led.setLevel(100)
 		led.setWhiteLevel(100)
 
 		return true
 	} else {
-		led.setLevel(0)
+		if (forceColor) {
+			led.setLevel(0)
+		}
+
 		return false
 	}
 }
