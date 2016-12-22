@@ -27,20 +27,15 @@ definition(
 
 
 preferences {
-	section("Overhead Light") {
-		paragraph "When this light is turned on, turn LED strip light on to full brigtness"
-		input "light", "capability.switch", required: true
+	section("Lights") {
+		paragraph "When the overhead light is turned on, turn LED strip light on to full brigtness. When the island dimmer is turned on or dimmed without the overhead light on, the LED strip lights' brightness will follow the dimmer."
+		input "light", "capability.switch", required: true, title: "Overhead Light"
+		input "dimmer", "capability.switchLevel", required: true, title: "Island Dimmer"
+		input "led", "capability.switch", required: true, title: "LED Strip"
 	}
-	section("Force LEDs to White?") {
+	section("Options") {
 		paragraph "If this option is selected, when the overhead light is turned on, the LED lights will be forced to the color white and will be turned on along with the warm white LEDs. If it is not selected, the LED color will not be changed; only the warm white LEDs will be turned on."
-		input "forceColor", "bool", required: true
-	}
-	section("Island Dimmer") {
-		paragraph "When this dimmer is turned on or dimmed without the overhead light on, the LED strip lights' brightness will follow this dimmer"
-		input "dimmer", "capability.switchLevel", required: true
-	}
-	section("LED Strip") {
-		input "led", "capability.switch", required: true
+		input "forceColor", "bool", required: true, title: "Force LEDs to White?"
 	}
 }
 
