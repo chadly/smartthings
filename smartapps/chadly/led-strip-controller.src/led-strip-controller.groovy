@@ -16,7 +16,7 @@
  *	2016-11-21: Initial Release
  */
 definition(
-	name: "LED Strip Light Controller",
+	name: "LED Strip Controller",
 	namespace: "chadly",
 	author: "Chad Lee",
 	description: "Tie the control of LED strip lights to other lights.",
