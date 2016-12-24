@@ -64,7 +64,9 @@ def doorOpened(evt) {
 }
 
 def doorClosed(evt) {
-	led.off()
+	if (state.isSleeping) {
+		led.off()
+	}
 }
 
 def modeChanged(evt) {
