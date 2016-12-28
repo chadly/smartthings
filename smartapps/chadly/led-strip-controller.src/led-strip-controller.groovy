@@ -20,7 +20,7 @@ definition(
 	namespace: "chadly",
 	author: "Chad Lee",
 	description: "Tie the control of LED strip lights to other lights.",
-	category: "Convenience",
+	category: "My Apps",
 	iconUrl: "http://cdn.device-icons.smartthings.com/Lighting/light11-icn.png",
 	iconX2Url: "http://cdn.device-icons.smartthings.com/Lighting/light11-icn@2x.png",
 	iconX3Url: "http://cdn.device-icons.smartthings.com/Lighting/light11-icn@3x.png")

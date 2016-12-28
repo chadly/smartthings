@@ -19,7 +19,7 @@ definition(
 	namespace: "chadly",
 	author: "Chad Lee",
 	description: "Turn Foscam LEDs on/off in response to other lights being turned on/off. e.g. when the front porch light is turned off at night, turn the front porch camera night vision LED on and vice versa.",
-	category: "Convenience",
+	category: "My Apps",
 	iconUrl: "http://cdn.device-icons.smartthings.com/Lighting/light11-icn.png",
 	iconX2Url: "http://cdn.device-icons.smartthings.com/Lighting/light11-icn@2x.png",
 	iconX3Url: "http://cdn.device-icons.smartthings.com/Lighting/light11-icn@3x.png")
