@@ -1,6 +1,6 @@
 # SmartThings Pet Lighting
 
-Turn on specific lights and set their level when in _Away_ mode at night. This same functionality can be accomplished with multple smart light app instances, however it is a pain in the ass to setup. You also have to watch out for conflicts between a _Goodbye_ routine which turns everything off and then you smart light app turning specific pet lights on. 
+Turn on specific lights and set their level when in _Away_ mode at night. This same functionality can be accomplished with multple smart light app instances, however it is a pain in the ass to setup. You also have to watch out for conflicts between a _Goodbye_ routine which turns everything off and your smart light app turning specific pet lights on. 
 
 This app will wait a couple of minutes after the mode changes to _Away_ at night to turn on the pet lighting to give any _Goodbye_ routine a chance to finish. It will also turn on the pet lighting if sunset happens during _Away_ and turn it off at sunrise if _Away_.
 
