@@ -20,7 +20,9 @@ definition(
 	author: "Chad Lee",
 	description: "Turn lights on only in Away mode only at night...for the pets",
 	category: "My Apps",
-	iconUrl: "http://image.flaticon.com/icons/png/512/12/12638.png")
+	iconUrl: "http://image.flaticon.com/icons/png/512/12/12638.png",
+	iconX2Url: "http://image.flaticon.com/icons/png/512/12/12638.png",
+	iconX3Url: "http://image.flaticon.com/icons/png/512/12/12638.png")
 
 preferences {
 	input "lights", "capability.switchLevel", required: true, title: "Turn Lights On", multiple: true
