@@ -5,6 +5,8 @@ This is my collection of [SmartThings](https://www.smartthings.com/) apps and de
 * [Camera LED Controller SmartApp](smartapps/chadly/camera-led-controller.src)
 * [AsusWRT Wifi Presence SmartApp](smartapps/chadly/asuswrt-wifi-presence.src)
 * [LED Strip Light Controller](smartapps/chadly/led-strip-controller.src)
+* [LED Night Lights](smartapps/chadly/led-night-lights.src)
+* [Pet Lighting](smartapps/chadly/pet-lighting.src)
 
 ## Installation
 
