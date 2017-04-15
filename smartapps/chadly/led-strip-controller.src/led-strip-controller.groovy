@@ -12,6 +12,7 @@
  *  on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
  *  for the specific language governing permissions and limitations under the License.
  *
+ *	2017-04-14: Allow control of multiple LED strips
  *	2016-11-23: Add option to force LED color
  *	2016-11-21: Initial Release
  */
@@ -31,7 +32,7 @@ preferences {
 		paragraph "When the overhead light is turned on, turn LED strip light on to full brigtness. When the island dimmer is turned on or dimmed without the overhead light on, the LED strip lights' brightness will follow the dimmer."
 		input "light", "capability.switch", required: true, title: "Overhead Light"
 		input "dimmer", "capability.switchLevel", required: true, title: "Island Dimmer"
-		input "led", "capability.switch", required: true, title: "LED Strip"
+		input "led", "capability.switch", required: true, multiple: true, title: "LED Strips"
 	}
 	section("Options") {
 		paragraph "If this option is selected, when the overhead light is turned on, the LED lights will be forced to the color white and will be turned on along with the warm white LEDs. If it is not selected, the LED color will not be changed; only the warm white LEDs will be turned on."
