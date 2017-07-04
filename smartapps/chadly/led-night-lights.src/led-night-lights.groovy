@@ -12,6 +12,7 @@
  *  on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
  *  for the specific language governing permissions and limitations under the License.
  *
+ *	2017-07-04: Allow multiple strips
  *	2016-12-23: Initial Release
  */
 definition(
@@ -26,7 +27,7 @@ definition(
 
 preferences {
 	input "door", "capability.contactSensor", required: true, title: "Bedroom Door"
-	input "led", "capability.switch", required: true, title: "LED Strip"
+	input "led", "capability.switch", required: true, multiple: true, title: "LED Strip"
 	input "sleep", "mode", title: "Sleepy Mode"
 }
 
