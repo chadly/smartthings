@@ -7,6 +7,7 @@ This is my collection of [SmartThings](https://www.smartthings.com/) apps and de
 * [LED Strip Light Controller](smartapps/chadly/led-strip-controller.src)
 * [LED Night Lights](smartapps/chadly/led-night-lights.src)
 * [Pet Lighting](smartapps/chadly/pet-lighting.src)
+* [Baby Temperature Monitor](smartapps/chadly/baby-temperature-monitor.src)
 
 ## Installation
 
@@ -29,6 +30,4 @@ Now whenever you need to update to the latest version, you can choose `↓ Updat
 You can also install it manually for those of you who really enjoy copying & pasting everything.
 
 1. Navigate to the app or device handler you want to install and copy the code.
-	* [Camera LED Controller SmartApp Code](https://raw.githubusercontent.com/chadly/smartthings-camera-led-controller/master/smartapps/chadly/camera-led-controller.src/camera-led-controller.groovy)
-	* [AsusWRT Wifi Presence SmartApp Code](https://raw.githubusercontent.com/chadly/smartthings/master/smartapps/chadly/asuswrt-wifi-presence.src/asuswrt-wifi-presence.groovy)
 2. Follow the instructions from the [ThingsThatAreSmart.wiki](http://thingsthataresmart.wiki/index.php?title=Using_Custom_Code#Using_a_Custom_SmartApp) on how to install a SmartApp.
